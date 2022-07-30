@@ -19,8 +19,8 @@
     "noUnusedParameters": true,
     "esModuleInterop": true,
     "paths": {
-      "nanobits-react-bootstrap": ["./packages/nanobits-react-bootstrap/src"],
-      "nanobits-react-bootstrap/*": ["./packages/nanobits-react-bootstrap/src/*"]
+      "nanobits-react-ui": ["./packages/nanobits-react-ui/src"],
+      "nanobits-react-ui/*": ["./packages/nanobits-react-ui/src/*"]
     }
   },
   "exclude": ["**/node_modules", "**/dist"]

@@ -1,5 +1,5 @@
 {
-  "name": "nanobits-react-bootstrap",
+  "name": "nanobits-react-ui",
   "version": "0.0.2",
   "description": "Boostrap components",
   "author": "Tinkeshwar <tinkeshwar@gmail.com>",
@@ -45,5 +45,6 @@
     "bootstrap": "^5.2.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
-  }
+  },
+  "gitHead": "6b527d1c9b6e75789e5503f714c5cbcdea1a454e"
 }
