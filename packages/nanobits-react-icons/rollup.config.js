@@ -14,7 +14,7 @@ export default {
       sourcemapPathTransform: (relativeSourcePath) => {
         return relativeSourcePath
           .replace('../../node_modules/', '../')
-          .replace('../packages/nanobits-react-ui', '..')
+          .replace('../packages/nanobits-react-icons', '..')
       },
     },
     {
@@ -25,7 +25,7 @@ export default {
       sourcemapPathTransform: (relativeSourcePath) => {
         return relativeSourcePath
           .replace('../../node_modules/', '../')
-          .replace('../packages/nanobits-react-ui', '..')
+          .replace('../packages/nanobits-react-icons', '..')
       },
     },
   ],

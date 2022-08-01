@@ -20,7 +20,11 @@
     "esModuleInterop": true,
     "paths": {
       "nanobits-react-ui": ["./packages/nanobits-react-ui/src"],
-      "nanobits-react-ui/*": ["./packages/nanobits-react-ui/src/*"]
+      "nanobits-react-ui/*": ["./packages/nanobits-react-ui/src/*"],
+      "nanobits-react-components": ["./packages/nanobits-react-components/src"],
+      "nanobits-react-components/*": ["./packages/nanobits-react-components/src/*"],
+      "nanobits-react-icons": ["./packages/nanobits-react-icons/src"],
+      "nanobits-react-icons/*": ["./packages/nanobits-react-icons/src/*"]
     }
   },
   "exclude": ["**/node_modules", "**/dist"]
