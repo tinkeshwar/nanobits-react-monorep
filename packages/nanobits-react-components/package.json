@@ -1,14 +1,14 @@
 {
   "name": "nanobits-react-components",
   "version": "0.0.2",
-  "description": "> TODO: description",
+  "description": "Custome components using nanobits react ui",
   "author": "Tinkeshwar <tinkeshwar@gmail.com>",
   "homepage": "https://github.com/tinkeshwar/nanobits-react-monorep#readme",
-  "license": "ISC",
+  "license": "MIT",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
   "jsnext:main": "dist/index.es.js",
-  "types": "dist/index.d.ts",
+  "types": "dist/nanobits-react-components/src/index.d.ts",
   "files": [
     "dist/",
     "src/"
@@ -27,6 +27,7 @@
     "@popperjs/core": "^2.11.5",
     "@rollup/plugin-commonjs": "^22.0.1",
     "@rollup/plugin-node-resolve": "^13.3.0",
+    "@rollup/plugin-typescript": "^8.3.4",
     "@types/react": "^18.0.15",
     "@types/react-dom": "^18.0.6",
     "@types/react-transition-group": "^4.4.5",
@@ -46,6 +47,7 @@
     "nanobits-react-ui": "^0.0.4"
   },
   "peerDependencies": {
+    "nanobits-react-icons": "^0.0.2",
     "nanobits-react-ui": "^0.0.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"

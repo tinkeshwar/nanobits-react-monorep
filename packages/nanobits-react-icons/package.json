@@ -4,7 +4,7 @@
   "description": "> TODO: description",
   "author": "Tinkeshwar <tinkeshwar@gmail.com>",
   "homepage": "https://github.com/tinkeshwar/nanobits-react-monorep#readme",
-  "license": "ISC",
+  "license": "MIT",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
   "jsnext:main": "dist/index.es.js",
