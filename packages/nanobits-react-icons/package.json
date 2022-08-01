@@ -1,6 +1,6 @@
 {
   "name": "nanobits-react-icons",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "> TODO: description",
   "author": "Tinkeshwar <tinkeshwar@gmail.com>",
   "homepage": "https://github.com/tinkeshwar/nanobits-react-monorep#readme",
@@ -42,11 +42,11 @@
     "typescript": "^4.7.4"
   },
   "dependencies": {
-    "nanobits-react-ui": "^0.0.3",
     "@fortawesome/fontawesome-svg-core": "^6.1.2",
     "@fortawesome/free-regular-svg-icons": "^6.1.2",
     "@fortawesome/free-solid-svg-icons": "^6.1.2",
-    "@fortawesome/react-fontawesome": "^0.2.0"
+    "@fortawesome/react-fontawesome": "^0.2.0",
+    "nanobits-react-ui": "^0.0.4"
   },
   "peerDependencies": {
     "react": "^18.2.0",

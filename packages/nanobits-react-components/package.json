@@ -1,6 +1,6 @@
 {
   "name": "nanobits-react-components",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "> TODO: description",
   "author": "Tinkeshwar <tinkeshwar@gmail.com>",
   "homepage": "https://github.com/tinkeshwar/nanobits-react-monorep#readme",
@@ -42,8 +42,8 @@
     "typescript": "^4.7.4"
   },
   "dependencies": {
-    "nanobits-react-icons": "^0.0.1",
-    "nanobits-react-ui": "^0.0.3"
+    "nanobits-react-icons": "^0.0.2",
+    "nanobits-react-ui": "^0.0.4"
   },
   "peerDependencies": {
     "nanobits-react-ui": "^0.0.3",
