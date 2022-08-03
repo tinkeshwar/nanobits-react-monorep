@@ -38,7 +38,7 @@ export const NButton = forwardRef<HTMLButtonElement | HTMLAnchorElement, NButton
             ref={ref}>
                 {loading && <Spinner color={'danger'} size={'sm'}/>}
                 {buttonIconLeft && <Icon type={'solid'} icon={buttonIconLeft} className={'mr-1'}/>} 
-                {buttonText || ''} 
+                &nbsp;{buttonText || ''}&nbsp; 
                 {buttonIconRight && <Icon type={'solid'} icon={buttonIconRight} className={'ml-1'}/>}
         </Button>
     )

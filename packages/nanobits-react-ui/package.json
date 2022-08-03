@@ -10,8 +10,7 @@
   "jsnext:main": "dist/index.es.js",
   "types": "dist/index.d.ts",
   "files": [
-    "dist/",
-    "src/"
+    "dist/"
   ],
   "repository": {
     "type": "git",
