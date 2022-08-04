@@ -9,17 +9,19 @@ export interface NButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     className?: string
     loading?: boolean | undefined
     disabled?: boolean | undefined
+    buttonVariant?: 'ghost' | 'outline'
     buttonText?: string | undefined
     buttonIconLeft?: string | undefined
     buttonIconRight?: string | undefined
 }
 
-export const NButton = forwardRef<HTMLButtonElement | HTMLAnchorElement, NButtonProps & ButtonProps>((
+export const NButton = forwardRef<HTMLButtonElement | HTMLAnchorElement, ButtonProps & NButtonProps>((
     {
         className,
-        buttonText,
         loading,
         disabled,
+        buttonVariant = 'ghost',
+        buttonText,
         buttonIconLeft,
         buttonIconRight,
         ...rest
@@ -35,6 +37,7 @@ export const NButton = forwardRef<HTMLButtonElement | HTMLAnchorElement, NButton
         <Button
             className={_classname} 
             disabled={ disabled || loading || false }
+            variant={buttonVariant}
             {...rest} 
             ref={ref}>
                 {loading && <Spinner color={'danger'} size={'sm'}/>}
@@ -49,6 +52,7 @@ NButton.propTypes = {
     className: PropTypes.string,
     loading: PropTypes.bool,
     disabled: PropTypes.bool,
+    buttonVariant: PropTypes.oneOf(['ghost', 'outline']),
     buttonText: PropTypes.string,
     buttonIconLeft: PropTypes.string,
     buttonIconRight: PropTypes.string

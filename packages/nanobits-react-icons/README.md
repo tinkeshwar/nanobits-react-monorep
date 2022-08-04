@@ -1,11 +1,12 @@
 # `nanobits-react-icons`
 
-> TODO: description
+> React library to provide fa icon support into your react project
 
 ## Usage
 
 ```
-const nanobitsReactIcons = require('nanobits-react-icons');
+import Icon from 'nanobits-react-icons'
 
-// TODO: DEMONSTRATE API
+<Icon icon={'fa-trash'} />
+
 ```

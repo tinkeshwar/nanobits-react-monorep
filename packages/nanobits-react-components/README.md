@@ -1,11 +1,14 @@
 # `nanobits-react-components`
 
-> TODO: description
+> This is a react components library, design to ease the work in your project.
 
 ## Usage
 
 ```
-const nanobitsReactComponents = require('nanobits-react-components');
+import { NButton } from 'nanobits-react-components'
 
-// TODO: DEMONSTRATE API
+<NButton
+    buttonText={'Your text'}
+/>
+
 ```
