@@ -3082,6 +3082,24 @@ mute-stream@0.0.8, mute-stream@~0.0.4:
   resolved "https://registry.yarnpkg.com/mute-stream/-/mute-stream-0.0.8.tgz#1630c42b2251ff81e2a283de96a5497ea92e5e0d"
   integrity sha512-nnbWWOkoWyUsTjKrhgD0dcz22mdkSnpYqbEjIm2nhwhuxlSkpywJmBo8h0ZqJdkp73mb90SssHkN4rsRaBAfAA==
 
+nanobits-react-icons@^1.0.0:
+  version "0.0.2"
+  resolved "https://registry.yarnpkg.com/nanobits-react-icons/-/nanobits-react-icons-0.0.2.tgz#4954e0815df39c1464afb58c1dd5838a4f49a48c"
+  integrity sha512-8rnCiqHSbWi2AJ0QCOkUy0oB/4JjmJylwRtbpM/fsd0hw2wu3VftovpCP1BDeN3f2JC9HMhlDMAk6jXJfnfgSA==
+  dependencies:
+    "@fortawesome/fontawesome-svg-core" "^6.1.2"
+    "@fortawesome/free-regular-svg-icons" "^6.1.2"
+    "@fortawesome/free-solid-svg-icons" "^6.1.2"
+    "@fortawesome/react-fontawesome" "^0.2.0"
+    nanobits-react-ui "^0.0.4"
+
+nanobits-react-ui@^0.0.4, nanobits-react-ui@^1.0.0:
+  version "0.0.4"
+  resolved "https://registry.yarnpkg.com/nanobits-react-ui/-/nanobits-react-ui-0.0.4.tgz#7e44e62ac8f4fed08845140555560a4d1a0a4abd"
+  integrity sha512-3VACKYMK1q+17zaqF1fx8a3gddKwr96QZq9mi1JU+/DTl0UIFzj8vrkPRJt8NATjmsiikrpOfcLJNbOWr0rZwQ==
+  dependencies:
+    bootstrap "^5.2.0"
+
 negotiator@^0.6.3:
   version "0.6.3"
   resolved "https://registry.yarnpkg.com/negotiator/-/negotiator-0.6.3.tgz#58e323a72fedc0d6f9cd4d31fe49f51479590ccd"
