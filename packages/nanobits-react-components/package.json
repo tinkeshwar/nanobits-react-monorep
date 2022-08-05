@@ -46,8 +46,6 @@
     "nanobits-react-ui": "^1.0.0"
   },
   "peerDependencies": {
-    "nanobits-react-icons": "^1.0.1",
-    "nanobits-react-ui": "^1.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   }
