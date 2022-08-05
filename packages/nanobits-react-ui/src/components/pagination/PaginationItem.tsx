@@ -22,6 +22,7 @@ export const PaginationItem = forwardRef<HTMLAnchorElement, PaginationItemProps>
   ({ children, className, component, ...rest }, ref) => {
     const _className = classNames(
       'page-item',
+      'n-custom-pagination-item-class',
       {
         active: rest.active,
         disabled: rest.disabled,

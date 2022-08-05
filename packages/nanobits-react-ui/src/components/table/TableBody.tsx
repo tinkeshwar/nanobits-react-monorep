@@ -23,6 +23,7 @@ export const TableBody = forwardRef<HTMLTableSectionElement, TableBodyProps>(
       {
         [`table-${color}`]: color,
       },
+      'n-custom-table-body-class',
       className,
     )
 

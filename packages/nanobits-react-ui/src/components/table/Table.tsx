@@ -167,6 +167,7 @@ export const Table = forwardRef<HTMLTableElement, TableProps>(
   ) => {
     const _className = classNames(
       'table',
+      'n-custom-table-class',
       {
         [`align-${align}`]: align,
         [`border-${borderColor}`]: borderColor,

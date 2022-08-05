@@ -15,7 +15,7 @@ export interface ModalTitleProps extends HTMLAttributes<HTMLHeadingElement> {
 
 export const ModalTitle = forwardRef<HTMLHeadElement, ModalTitleProps>(
   ({ children, component: Component = 'h5', className, ...rest }, ref) => {
-    const _className = classNames('modal-title', className)
+    const _className = classNames('modal-title','n-custom-modal-title-class', className)
 
     return (
       <Component className={_className} {...rest} ref={ref}>

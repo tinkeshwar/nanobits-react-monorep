@@ -92,6 +92,7 @@ export const FormInput = forwardRef<HTMLInputElement, FormInputProps>(
         'is-invalid': invalid,
         'is-valid': valid,
       },
+      'n-custom-form-input-class',
       className,
     )
 

@@ -15,7 +15,7 @@ export interface AlertHeadingProps extends HTMLAttributes<HTMLHeadingElement> {
 
 export const AlertHeading = forwardRef<HTMLHeadingElement, AlertHeadingProps>(
   ({ children, className, component: Component = 'h4', ...rest }, ref) => {
-    const _className = classNames('alert-heading', className)
+    const _className = classNames('alert-heading', 'n-custom-alert-heading-class', className)
 
     return (
       <Component className={_className} {...rest} ref={ref}>

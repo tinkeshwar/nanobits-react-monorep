@@ -17,7 +17,7 @@ export interface CardLinkProps extends AnchorHTMLAttributes<HTMLAnchorElement> {
 
 export const CardLink = forwardRef<HTMLAnchorElement, CardLinkProps>(
   ({ children, className, ...rest }, ref) => {
-    const _className = classNames('card-link', className)
+    const _className = classNames('card-link','n-custom-card-link-class', className)
 
     return (
       <Link className={_className} {...rest} ref={ref}>

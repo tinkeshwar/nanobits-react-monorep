@@ -32,6 +32,7 @@ export const Progress = forwardRef<HTMLDivElement, ProgressProps>(
   ({ children, className, height, thin, value = 0, white, ...rest }, ref) => {
     const _className = classNames(
       'progress',
+      'n-custom-progress-class',
       {
         'progress-thin': thin,
         'progress-white': white,

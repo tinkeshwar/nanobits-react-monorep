@@ -15,7 +15,7 @@ export interface FormTextProps extends HTMLAttributes<HTMLDivElement | HTMLSpanE
 
 export const FormText = forwardRef<HTMLDivElement | HTMLSpanElement, FormTextProps>(
   ({ children, className, component: Component = 'div', ...rest }, ref) => {
-    const _className = classNames('form-text', className)
+    const _className = classNames('form-text','n-custom-form-text-class', className)
     return (
       <Component className={_className} {...rest} ref={ref}>
         {children}

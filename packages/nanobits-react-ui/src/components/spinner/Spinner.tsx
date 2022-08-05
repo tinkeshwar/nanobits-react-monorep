@@ -50,6 +50,7 @@ export const Spinner = forwardRef<HTMLDivElement | HTMLSpanElement, SpinnerProps
       `spinner-${variant}`,
       `text-${color}`,
       size && `spinner-${variant}-${size}`,
+      'n-custom-spinner-class',
       className,
     )
 

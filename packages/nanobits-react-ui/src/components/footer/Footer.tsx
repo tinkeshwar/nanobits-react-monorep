@@ -15,7 +15,7 @@ export interface FooterProps extends HTMLAttributes<HTMLDivElement> {
 
 export const Footer = forwardRef<HTMLDivElement, FooterProps>(
   ({ children, className, position, ...rest }, ref) => {
-    const _className = classNames('footer', { [`footer-${position}`]: position }, className)
+    const _className = classNames('footer','n-custom-footer-class', { [`footer-${position}`]: position }, className)
 
     return (
       <div className={_className} {...rest} ref={ref}>

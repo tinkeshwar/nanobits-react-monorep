@@ -18,7 +18,7 @@ export interface ModalHeaderProps extends HTMLAttributes<HTMLDivElement> {
 export const ModalHeader = forwardRef<HTMLDivElement, ModalHeaderProps>(
   ({ children, className, closeButton = true, ...rest }, ref) => {
     const { setVisible } = useContext(ModalContext)
-    const _className = classNames('modal-header', className)
+    const _className = classNames('modal-header','n-custom-modal-header-class', className)
 
     return (
       <div className={_className} {...rest} ref={ref}>

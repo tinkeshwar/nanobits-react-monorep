@@ -37,6 +37,7 @@ export const ListGroupItem = forwardRef<
 >(({ children, active, className, disabled, color, component = 'li', ...rest }, ref) => {
   const _className = classNames(
     'list-group-item',
+    'n-custom-list-group-item-class',
     {
       [`list-group-item-${color}`]: color,
       'list-group-item-action': component === 'a' || component === 'button',

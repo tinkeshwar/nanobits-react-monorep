@@ -11,7 +11,7 @@ export interface CardImageOverlayProps extends HTMLAttributes<HTMLDivElement> {
 
 export const CardImageOverlay = forwardRef<HTMLDivElement, CardImageOverlayProps>(
   ({ children, className, ...rest }, ref) => {
-    const _className = classNames('card-img-overlay', className)
+    const _className = classNames('card-img-overlay','n-custom-card-image-overlay-class', className)
 
     return (
       <div className={_className} {...rest} ref={ref}>

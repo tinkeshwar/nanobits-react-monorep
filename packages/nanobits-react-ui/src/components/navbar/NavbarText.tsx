@@ -11,7 +11,7 @@ export interface NavbarTextProps extends HTMLAttributes<HTMLSpanElement> {
 
 export const NavbarText = forwardRef<HTMLSpanElement, NavbarTextProps>(
   ({ children, className, ...rest }, ref) => {
-    const _className = classNames('navbar-text', className)
+    const _className = classNames('navbar-text','n-custom-navbar-text-class', className)
 
     return (
       <span className={_className} {...rest} ref={ref}>

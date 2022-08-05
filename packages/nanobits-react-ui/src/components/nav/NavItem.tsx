@@ -5,7 +5,7 @@ import { NavLink, NavLinkProps } from './NavLink'
 
 export const NavItem = forwardRef<HTMLLIElement, NavLinkProps>(
   ({ children, className, ...rest }, ref) => {
-    const _className = classNames('nav-item', className)
+    const _className = classNames('nav-item','n-custom-nav-item-class', className)
     if (rest.href || rest.to) {
       children = (
         <NavLink className={className} {...rest}>

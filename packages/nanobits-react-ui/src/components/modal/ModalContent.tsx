@@ -11,7 +11,7 @@ export interface ModalContentProps extends HTMLAttributes<HTMLDivElement> {
 
 export const ModalContent = forwardRef<HTMLDivElement, ModalContentProps>(
   ({ children, className, ...rest }, ref) => {
-    const _className = classNames('modal-content', className)
+    const _className = classNames('modal-content','n-custom-modal-content-class', className)
 
     return (
       <div className={_className} {...rest} ref={ref}>

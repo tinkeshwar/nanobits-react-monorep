@@ -15,7 +15,7 @@ export interface CardTextProps extends HTMLAttributes<HTMLParagraphElement> {
 
 export const CardText = forwardRef<HTMLParagraphElement, CardTextProps>(
   ({ children, component: Component = 'p', className, ...rest }, ref) => {
-    const _className = classNames('card-text', className)
+    const _className = classNames('card-text','n-custom-card-text-class', className)
 
     return (
       <Component className={_className} {...rest} ref={ref}>

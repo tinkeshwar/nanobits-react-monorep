@@ -17,6 +17,7 @@ export const CInputGroup = forwardRef<HTMLDivElement, CInputGroupProps>(
   ({ children, className, size, ...rest }, ref) => {
     const _className = classNames(
       'input-group',
+      'n-custom-form-input-group-class',
       {
         [`input-group-${size}`]: size,
       },

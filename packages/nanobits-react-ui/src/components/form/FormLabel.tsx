@@ -15,7 +15,7 @@ export interface FormLabelProps extends AllHTMLAttributes<HTMLLabelElement> {
 
 export const FormLabel = forwardRef<HTMLLabelElement, FormLabelProps>(
   ({ children, className, customClassName, ...rest }, ref) => {
-    const _className = customClassName ? customClassName : classNames('form-label', className)
+    const _className = customClassName ? customClassName : classNames('form-label','n-custom-form-label-class', className)
     return (
       <label className={_className} {...rest} ref={ref}>
         {children}

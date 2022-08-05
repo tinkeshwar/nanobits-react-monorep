@@ -31,6 +31,7 @@ export const ListGroup = forwardRef<HTMLDivElement | HTMLUListElement, ListGroup
   ({ children, className, component: Component = 'ul', flush, layout }, ref) => {
     const _className = classNames(
       'list-group',
+      'n-custom-list-group-class',
       {
         'list-group-flush': flush,
         [`list-group-${layout}`]: layout,

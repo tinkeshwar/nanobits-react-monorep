@@ -19,7 +19,7 @@ export interface HeaderProps extends HTMLAttributes<HTMLDivElement> {
 
 export const Header = forwardRef<HTMLDivElement, HeaderProps>(
   ({ children, className, container, position, ...rest }, ref) => {
-    const _className = classNames('header', { [`header-${position}`]: position }, className)
+    const _className = classNames('header','n-custom-header-class', { [`header-${position}`]: position }, className)
 
     let content
     if (container) {

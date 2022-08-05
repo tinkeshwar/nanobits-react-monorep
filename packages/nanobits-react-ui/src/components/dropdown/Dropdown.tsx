@@ -146,6 +146,7 @@ export const Dropdown = forwardRef<HTMLDivElement | HTMLLIElement, DropdownProps
       {
         show: _visible,
       },
+      'n-custom-dropdown-class',
       direction,
       className,
     )

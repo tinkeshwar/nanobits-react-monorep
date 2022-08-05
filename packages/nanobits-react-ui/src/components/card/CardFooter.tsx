@@ -11,7 +11,7 @@ export interface CardFooterProps extends HTMLAttributes<HTMLDivElement> {
 
 export const CardFooter = forwardRef<HTMLDivElement, CardFooterProps>(
   ({ children, className, ...rest }, ref) => {
-    const _className = classNames('card-footer', className)
+    const _className = classNames('card-footer', 'n-custom-card-footer-class', className)
 
     return (
       <div className={_className} {...rest} ref={ref}>

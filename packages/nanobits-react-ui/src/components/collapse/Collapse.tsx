@@ -92,6 +92,7 @@ export const Collapse = forwardRef<HTMLDivElement, CollapseProps>(
       {
         'collapse-horizontal': horizontal,
       },
+      'n-custom-collapse-class',
       className,
     )
 

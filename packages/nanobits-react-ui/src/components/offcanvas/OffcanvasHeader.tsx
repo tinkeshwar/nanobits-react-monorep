@@ -11,7 +11,7 @@ export interface OffcanvasHeaderProps extends HTMLAttributes<HTMLDivElement> {
 
 export const OffcanvasHeader = forwardRef<HTMLDivElement, OffcanvasHeaderProps>(
   ({ children, className, ...rest }, ref) => {
-    const _className = classNames('offcanvas-header', className)
+    const _className = classNames('offcanvas-header','n-custom-offcanvas-header-class', className)
 
     return (
       <div className={_className} {...rest} ref={ref}>

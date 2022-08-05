@@ -40,7 +40,7 @@ export const NavLink = forwardRef<
   const forkedRef = useForkedRef(ref, navLinkRef)
 
   const { setVisibleGroup } = useContext(NavContext)
-  const _className = classNames('nav-link', className)
+  const _className = classNames('nav-link','n-custom-nav-link-class', className)
 
   useEffect(() => {
     rest.active = navLinkRef.current?.classList.contains('active')

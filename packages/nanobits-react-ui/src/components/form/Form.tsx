@@ -15,7 +15,7 @@ export interface FormProps extends FormHTMLAttributes<HTMLFormElement> {
 
 export const Form = forwardRef<HTMLFormElement, FormProps>(
   ({ children, className, validated, ...rest }, ref) => {
-    const _className = classNames({ 'was-validated': validated }, className)
+    const _className = classNames({ 'was-validated': validated },'n-custom-form-class', className)
     return (
       <form className={_className} {...rest} ref={ref}>
         {children}

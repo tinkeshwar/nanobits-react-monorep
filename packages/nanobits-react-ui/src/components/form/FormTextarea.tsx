@@ -62,6 +62,7 @@ export const FormTextarea = forwardRef<HTMLTextAreaElement, FormTextareaProps>(
         'is-invalid': invalid,
         'is-valid': valid,
       },
+      'n-custom-form-textarea-class',
       className,
     )
     return (

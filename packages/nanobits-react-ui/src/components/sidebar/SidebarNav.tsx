@@ -23,7 +23,7 @@ export const SidebarNav = forwardRef<HTMLUListElement, SidebarNavProps>(
       visibleGroup,
       setVisibleGroup,
     }
-    const classes = classNames('sidebar-nav', className)
+    const classes = classNames('sidebar-nav','n-custom-sidebar-nav-class', className)
     return (
       <ul className={classes} ref={ref} {...rest}>
         <NavContext.Provider value={NavContextValues}>

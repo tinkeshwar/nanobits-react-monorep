@@ -49,7 +49,7 @@ export interface FormRangeProps extends InputHTMLAttributes<HTMLInputElement> {
 
 export const FormRange = forwardRef<HTMLInputElement, FormRangeProps>(
   ({ className, label, ...rest }, ref) => {
-    const _className = classNames('form-range', className)
+    const _className = classNames('form-range','n-custom-form-range-class', className)
     return (
       <>
         {label && <FormLabel htmlFor={rest.id}>{label}</FormLabel>}

@@ -11,7 +11,7 @@ export interface SidebarTogglerProps extends HTMLAttributes<HTMLButtonElement> {
 
 export const SidebarToggler = forwardRef<HTMLButtonElement, SidebarTogglerProps>(
   ({ children, className, ...rest }, ref) => {
-    const _className = classNames('sidebar-toggler', className)
+    const _className = classNames('sidebar-toggler','n-custom-sidebar-toggler-class', className)
     return (
       <button className={_className} ref={ref} {...rest}>
         {children}

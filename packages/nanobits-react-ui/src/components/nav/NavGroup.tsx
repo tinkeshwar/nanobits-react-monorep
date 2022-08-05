@@ -116,7 +116,7 @@ export const NavGroup = forwardRef<HTMLLIElement, NavGroupProps>(
         >
           {(state) => (
             <ul
-              className={classNames('nav-group-items', {
+              className={classNames('nav-group-items', 'n-custom-nav-group-class', {
                 compact: compact,
               })}
               style={{ ...style, ...transitionStyles[state] }}

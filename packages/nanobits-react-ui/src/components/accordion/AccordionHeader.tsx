@@ -13,7 +13,7 @@ export interface AccordionHeaderProps extends HTMLAttributes<HTMLDivElement> {
 
 export const AccordionHeader = forwardRef<HTMLDivElement, AccordionHeaderProps>(
   ({ children, className, ...rest }, ref) => {
-    const _className = classNames('accordion-header', className)
+    const _className = classNames('accordion-header', 'n-custom-accordion-header-class', className)
 
     return (
       <div className={_className} {...rest} ref={ref}>

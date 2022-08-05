@@ -11,7 +11,7 @@ export interface HeaderTogglerProps extends HTMLAttributes<HTMLButtonElement> {
 
 export const HeaderToggler = forwardRef<HTMLButtonElement, HeaderTogglerProps>(
   ({ children, className, ...rest }, ref) => {
-    const _className = classNames('header-toggler', className)
+    const _className = classNames('header-toggler','n-custom-header-toggle-class', className)
 
     return (
       <button type="button" className={_className} {...rest} ref={ref}>

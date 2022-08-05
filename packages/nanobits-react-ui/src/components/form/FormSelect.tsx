@@ -68,6 +68,7 @@ export const FormSelect = forwardRef<HTMLSelectElement, FormSelectProps>(
   ) => {
     const _className = classNames(
       'form-select',
+      'n-custom-form-select-class',
       {
         [`form-select-${size}`]: size,
         'is-invalid': invalid,

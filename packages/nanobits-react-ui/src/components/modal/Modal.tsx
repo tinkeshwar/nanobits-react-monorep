@@ -160,6 +160,7 @@ export const Modal = forwardRef<HTMLDivElement, ModalProps>(
     }
     const _className = classNames(
       'modal',
+      'n-custom-modal-class',
       {
         'modal-static': statiBackdrop,
         fade: transition,

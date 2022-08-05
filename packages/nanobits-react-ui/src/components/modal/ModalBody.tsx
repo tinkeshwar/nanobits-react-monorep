@@ -11,7 +11,7 @@ export interface ModalBodyProps extends HTMLAttributes<HTMLDivElement> {
 
 export const ModalBody = forwardRef<HTMLDivElement, ModalBodyProps>(
   ({ children, className, ...rest }, ref) => {
-    const _className = classNames('modal-body', className)
+    const _className = classNames('modal-body','n-custom-modal-body-class', className)
 
     return (
       <div className={_className} {...rest} ref={ref}>

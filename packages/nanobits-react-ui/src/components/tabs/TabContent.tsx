@@ -11,7 +11,7 @@ export interface TabContentProps extends HTMLAttributes<HTMLDivElement> {
 
 export const TabContent = forwardRef<HTMLDivElement, TabContentProps>(
   ({ children, className, ...rest }, ref) => {
-    const _className = classNames('tab-content', className)
+    const _className = classNames('tab-content','n-custom-tab-content-class', className)
     return (
       <div className={_className} {...rest} ref={ref}>
         {children}

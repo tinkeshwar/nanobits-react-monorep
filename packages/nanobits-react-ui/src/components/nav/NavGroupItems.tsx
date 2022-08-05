@@ -11,7 +11,7 @@ export interface NavGroupItemsProps extends HTMLAttributes<HTMLUListElement> {
 
 export const NavGroupItems = forwardRef<HTMLUListElement, NavGroupItemsProps>(
   ({ children, className, ...rest }, ref) => {
-    const _className = classNames('nav-group-items', className)
+    const _className = classNames('nav-group-items','n-custom-nav-group-item-class', className)
     return (
       <ul className={_className} {...rest} ref={ref}>
         {children}

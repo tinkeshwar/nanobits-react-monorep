@@ -14,7 +14,7 @@ export interface AccordionBodyProps extends HTMLAttributes<HTMLDivElement> {
 export const AccordionBody = forwardRef<HTMLDivElement, AccordionBodyProps>(
   ({ children, className, ...rest }, ref) => {
     const { visible } = useContext(AccordionItemContext)
-    const _className = classNames('accordion-body', className)
+    const _className = classNames('accordion-body', 'n-custom-accordion-body-class', className)
 
     return (
       <Collapse className="accordion-collpase" visible={visible}>

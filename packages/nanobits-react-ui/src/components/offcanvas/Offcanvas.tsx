@@ -88,6 +88,7 @@ export const Offcanvas = forwardRef<HTMLDivElement, OffcanvasProps>(
 
     const _className = classNames(
       'offcanvas',
+      'n-custom-offcanvas-class',
       {
         [`offcanvas-${placement}`]: placement,
         show: _visible,

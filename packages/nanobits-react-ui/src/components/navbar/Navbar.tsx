@@ -54,6 +54,7 @@ export const Navbar = forwardRef<HTMLDivElement, NavbarProps>(
   ) => {
     const _className = classNames(
       'navbar',
+      'n-custom-navbar-class',
       {
         [`bg-${color}`]: color,
         [`navbar-${colorScheme}`]: colorScheme,

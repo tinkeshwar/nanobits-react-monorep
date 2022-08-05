@@ -59,6 +59,7 @@ export const Alert = forwardRef<HTMLDivElement, AlertProps>(
 
     const _className = classNames(
       'alert',
+      'n-custom-alert-class',
       variant === 'solid' ? `bg-${color} text-white` : `alert-${color}`,
       {
         'alert-dismissible fade': dismissible,

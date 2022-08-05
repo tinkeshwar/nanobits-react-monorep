@@ -32,6 +32,7 @@ export const ProgressBar = forwardRef<HTMLDivElement, ProgressBarProps>(
   ({ children, animated, className, color, value = 0, variant, ...rest }, ref) => {
     const _className = classNames(
       'progress-bar',
+      'n-custom-progress-bar-class',
       {
         [`bg-${color}`]: color,
         [`progress-bar-${variant}`]: variant,

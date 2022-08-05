@@ -109,6 +109,7 @@ export const FormCheck = forwardRef<HTMLInputElement, FormCheckProps>(
 
     const _className = classNames(
       'form-check',
+      'n-custom-form-check-class',
       {
         'form-check-inline': inline,
         'is-invalid': invalid,

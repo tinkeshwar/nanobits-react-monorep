@@ -45,7 +45,7 @@ export const AccordionItem = forwardRef<HTMLDivElement, AccordionItemProps>(
       setVisible(Boolean(_activeItemKey === _itemKey.current))
     }, [_activeItemKey])
 
-    const _className = classNames('accordion-item', className)
+    const _className = classNames('accordion-item', 'n-custom-accordion-item-class', className)
 
     return (
       <div className={_className} {...rest} ref={ref}>

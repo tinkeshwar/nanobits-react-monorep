@@ -23,6 +23,7 @@ export const TableHeaderCell = forwardRef<HTMLTableCellElement, TableHeaderCellP
       {
         [`table-${color}`]: color,
       },
+      'n-custom-table-header-cell-class',
       className,
     )
 

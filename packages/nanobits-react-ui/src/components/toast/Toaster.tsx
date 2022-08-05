@@ -53,6 +53,7 @@ export const Toaster = forwardRef<HTMLDivElement, ToasterProps>(
 
     const _className = classNames(
       'toaster toast-container p-3',
+      'n-custom-toaster-class',
       {
         'position-fixed': placement,
         'top-0': placement && placement.includes('top'),
