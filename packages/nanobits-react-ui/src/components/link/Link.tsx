@@ -28,7 +28,7 @@ export interface LinkProps extends AllHTMLAttributes<HTMLElement> {
 export const Link = forwardRef<HTMLButtonElement | HTMLAnchorElement, LinkProps>(
   ({ children, active, className, component: Component = 'a', disabled, ...rest }, ref) => {
     // TODO: remove duplicated classes ex. `active active` in `<ListGroupItem>`
-    const _className = classNames(className, { active, disabled })
+    const _className = classNames(className,'n-custom-link-class', { active, disabled })
 
     return (
       <Component

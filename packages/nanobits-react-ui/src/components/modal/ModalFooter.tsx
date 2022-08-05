@@ -11,7 +11,7 @@ export interface ModalFooterProps extends HTMLAttributes<HTMLDivElement> {
 
 export const ModalFooter = forwardRef<HTMLDivElement, ModalFooterProps>(
   ({ children, className, ...rest }, ref) => {
-    const _className = classNames('modal-footer', className)
+    const _className = classNames('modal-footer','n-custom-modal-footer-class', className)
 
     return (
       <div className={_className} {...rest} ref={ref}>

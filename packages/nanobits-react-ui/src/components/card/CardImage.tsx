@@ -22,7 +22,7 @@ export const CardImage = forwardRef<
   HTMLImageElement | HTMLOrSVGElement | HTMLOrSVGImageElement,
   CardImageProps
 >(({ children, className, component: Component = 'img', orientation, ...rest }, ref) => {
-  const _className = classNames(orientation ? `card-img-${orientation}` : 'card-img', className)
+  const _className = classNames(orientation ? `card-img-${orientation}` : 'card-img', 'n-custom-card-image-class', className)
 
   return (
     <Component className={_className} {...rest} ref={ref}>

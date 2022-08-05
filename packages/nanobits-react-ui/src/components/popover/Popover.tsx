@@ -131,6 +131,7 @@ export const Popover: FC<PopoverProps> = ({
                     `popover bs-popover-${
                       placement === 'left' ? 'start' : placement === 'right' ? 'end' : placement
                     }`,
+                    'n-custom-popover-class',
                     transitionClass,
                   )}
                   ref={setPopperElement}

@@ -23,6 +23,7 @@ export const TableHead = forwardRef<HTMLTableSectionElement, TableHeadProps>(
       {
         [`table-${color}`]: color,
       },
+      'n-custom-table-head-class',
       className,
     )
 

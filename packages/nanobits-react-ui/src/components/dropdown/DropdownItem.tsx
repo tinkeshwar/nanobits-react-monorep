@@ -18,7 +18,7 @@ export interface DropdownItemProps extends LinkProps {
 
 export const DropdownItem = forwardRef<HTMLButtonElement | HTMLAnchorElement, DropdownItemProps>(
   ({ children, className, component = 'a', ...rest }, ref) => {
-    const _className = classNames('dropdown-item', className)
+    const _className = classNames('dropdown-item','n-custom-dropdown-item-class', className)
 
     return (
       <Link className={_className} component={component} {...rest} ref={ref}>

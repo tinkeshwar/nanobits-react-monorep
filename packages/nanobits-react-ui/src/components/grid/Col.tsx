@@ -103,6 +103,7 @@ export const Col = forwardRef<HTMLDivElement, ColProps>(
 
     const _className = classNames(
       repsonsiveClassNames.length ? repsonsiveClassNames : 'col',
+      'n-custom-col-class',
       className,
     )
 

@@ -35,6 +35,7 @@ export const FormFeedback = forwardRef<HTMLDivElement | HTMLSpanElement, FormFee
         [`invalid-${tooltip ? 'tooltip' : 'feedback'}`]: invalid,
         [`valid-${tooltip ? 'tooltip' : 'feedback'}`]: valid,
       },
+      'n-custom-form-feedback-class',
       className,
     )
     return (

@@ -121,6 +121,7 @@ export const Tooltip: FC<TooltipProps> = ({
                     `tooltip bs-tooltip-${
                       placement === 'left' ? 'start' : placement === 'right' ? 'end' : placement
                     }`,
+                    'n-custom-tooltip-class',
                     transitionClass,
                   )}
                   ref={setPopperElement}

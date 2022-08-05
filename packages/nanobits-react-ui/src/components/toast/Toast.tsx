@@ -121,6 +121,7 @@ export const Toast = forwardRef<HTMLDivElement, ToastProps>(
         [`bg-${color}`]: color,
         'border-0': color,
       },
+      'n-custom-toast-class',
       className,
     )
 

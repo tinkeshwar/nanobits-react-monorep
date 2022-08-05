@@ -11,7 +11,7 @@ export interface OffcanvasBodyProps extends HTMLAttributes<HTMLDivElement> {
 
 export const OffcanvasBody = forwardRef<HTMLDivElement, OffcanvasBodyProps>(
   ({ children, className, ...rest }, ref) => {
-    const _className = classNames('offcanvas-body', className)
+    const _className = classNames('offcanvas-body','n-custom-offcanvas-body-class', className)
 
     return (
       <div className={_className} {...rest} ref={ref}>

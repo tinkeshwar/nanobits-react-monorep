@@ -72,7 +72,7 @@ export const Button = forwardRef<HTMLButtonElement | HTMLAnchorElement, ButtonPr
     ref,
   ) => {
     const _className = classNames(
-      'btn',
+      'btn', 'n-custom-button-class',
       variant ? `btn-${variant}-${color}` : `btn-${color}`,
       { [`btn-${size}`]: size },
       shape,

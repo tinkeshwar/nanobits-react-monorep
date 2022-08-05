@@ -133,6 +133,7 @@ export const Carousel = forwardRef<HTMLDivElement, CarouselProps>(
 
     const _className = classNames(
       'carousel slide',
+      'n-custom-carousel-class',
       transition === 'crossfade' && 'carousel-fade',
       dark && 'carousel-dark',
       className,

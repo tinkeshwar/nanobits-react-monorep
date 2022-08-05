@@ -15,7 +15,7 @@ export interface CardTitleProps extends HTMLAttributes<HTMLHeadingElement> {
 
 export const CardTitle = forwardRef<HTMLHeadingElement, CardTitleProps>(
   ({ children, component: Component = 'h5', className, ...rest }, ref) => {
-    const _className = classNames('card-title', className)
+    const _className = classNames('card-title','n-custom-card-title-class', className)
 
     return (
       <Component className={_className} {...rest} ref={ref}>

@@ -22,6 +22,7 @@ export const ButtonGroup = forwardRef<HTMLDivElement, ButtonGroupProps>(
     const _className = classNames(
       vertical ? 'btn-group-vertical' : 'btn-group',
       { [`btn-group-${size}`]: size },
+      'n-custom-button-group-class',
       className,
     )
 

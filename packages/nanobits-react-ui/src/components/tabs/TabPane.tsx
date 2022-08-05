@@ -38,6 +38,7 @@ export const TabPane = forwardRef<HTMLDivElement, TabPaneProps>(
       {
         active: visible,
       },
+      'n-custom-tab-pane-class',
       className,
     )
     return (

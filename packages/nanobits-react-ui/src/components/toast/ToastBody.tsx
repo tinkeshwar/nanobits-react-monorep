@@ -11,7 +11,7 @@ export interface ToastBodyProps extends HTMLAttributes<HTMLDivElement> {
 
 export const ToastBody = forwardRef<HTMLDivElement, ToastBodyProps>(
   ({ children, className, ...rest }, ref) => {
-    const _className = classNames('toast-body', className)
+    const _className = classNames('toast-body','n-custom-toast-body-class', className)
     return (
       <div className={_className} {...rest} ref={ref}>
         {children}

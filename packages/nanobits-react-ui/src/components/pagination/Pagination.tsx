@@ -21,6 +21,7 @@ export const Pagination = forwardRef<HTMLUListElement, PaginationProps>(
   ({ children, align, className, size, ...rest }, ref) => {
     const _className = classNames(
       'pagination',
+      'n-custom-pagination-class',
       {
         [`justify-content-${align}`]: align,
         [`pagination-${size}`]: size,

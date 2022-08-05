@@ -15,7 +15,7 @@ export interface NavbarNavProps extends HTMLAttributes<HTMLDivElement | HTMLULis
 
 export const NavbarNav = forwardRef<HTMLDivElement | HTMLUListElement, NavbarNavProps>(
   ({ children, component: Component = 'ul', className, ...rest }, ref) => {
-    const _className = classNames('navbar-nav', className)
+    const _className = classNames('navbar-nav','n-custom-navbar-nav-class', className)
 
     return (
       <Component className={_className} role="navigation" {...rest} ref={ref}>

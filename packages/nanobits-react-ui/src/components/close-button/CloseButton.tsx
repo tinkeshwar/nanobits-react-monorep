@@ -25,6 +25,7 @@ export const CloseButton = forwardRef<HTMLButtonElement, CloseButtonProps>(
       {
         'btn-close-white': white,
       },
+      'n-custom-close-button-class',
       disabled,
       className,
     )

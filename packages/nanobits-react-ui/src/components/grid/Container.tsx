@@ -55,6 +55,7 @@ export const Container = forwardRef<HTMLDivElement, ContainerProps>(
 
     const _className = classNames(
       repsonsiveClassNames.length ? repsonsiveClassNames : 'container',
+      'n-custom-container-class',
       className,
     )
 

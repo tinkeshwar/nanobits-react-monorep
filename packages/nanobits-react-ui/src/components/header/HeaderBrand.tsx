@@ -15,7 +15,7 @@ export interface HeaderBrandProps extends HTMLAttributes<HTMLAnchorElement | HTM
 
 export const HeaderBrand = forwardRef<HTMLAnchorElement | HTMLSpanElement, HeaderBrandProps>(
   ({ children, component: Component = 'a', className, ...rest }, ref) => {
-    const _className = classNames('header-brand', className)
+    const _className = classNames('header-brand','n-custom-header-brand-class', className)
 
     return (
       <Component className={_className} {...rest} ref={ref}>

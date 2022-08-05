@@ -33,6 +33,7 @@ export const TableRow = forwardRef<HTMLTableRowElement, TableRowProps>(
         'table-active': active,
         [`table-${color}`]: color,
       },
+      'n-custom-table-row-class',
       className,
     )
 

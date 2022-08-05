@@ -15,7 +15,7 @@ export interface HeaderNavProps extends HTMLAttributes<HTMLDivElement | HTMLULis
 
 export const HeaderNav = forwardRef<HTMLDivElement | HTMLUListElement, HeaderNavProps>(
   ({ children, component: Component = 'ul', className, ...rest }, ref) => {
-    const _className = classNames('header-nav', className)
+    const _className = classNames('header-nav','n-custom-header-nav-class', className)
 
     return (
       <Component className={_className} role="navigation" {...rest} ref={ref}>

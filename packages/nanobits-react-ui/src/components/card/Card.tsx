@@ -26,6 +26,7 @@ export const Card = forwardRef<HTMLDivElement, CardProps>(
   ({ children, className, color, textColor, ...rest }, ref) => {
     const _className = classNames(
       'card',
+      'n-custom-card-class',
       {
         [`bg-${color}`]: color,
         [`text-${textColor}`]: textColor,

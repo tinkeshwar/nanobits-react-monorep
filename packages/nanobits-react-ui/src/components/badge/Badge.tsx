@@ -63,7 +63,7 @@ export const Badge = forwardRef<HTMLDivElement | HTMLSpanElement, BadgeProps>(
     ref,
   ) => {
     const _className = classNames(
-      'badge',
+      'badge', 'n-custom-badge-class',
       {
         [`bg-${color}`]: color,
         'position-absolute translate-middle': position,

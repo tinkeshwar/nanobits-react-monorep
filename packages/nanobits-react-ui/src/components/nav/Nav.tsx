@@ -26,6 +26,7 @@ export const Nav = forwardRef<HTMLDivElement | HTMLUListElement | HTMLOListEleme
   ({ children, className, component: Component = 'ul', layout, variant, ...rest }, ref) => {
     const _className = classNames(
       'nav',
+      'n-custom-nav-class',
       {
         [`nav-${layout}`]: layout,
         [`nav-${variant}`]: variant,

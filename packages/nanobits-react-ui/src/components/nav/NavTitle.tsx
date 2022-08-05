@@ -11,7 +11,7 @@ export interface NavTitleProps extends HTMLAttributes<HTMLLIElement> {
 
 export const NavTitle = forwardRef<HTMLLIElement, NavTitleProps>(
   ({ children, className, ...rest }, ref) => {
-    const _className = classNames('nav-title', className)
+    const _className = classNames('nav-title','n-custom-nav-title-class', className)
     return (
       <li className={_className} {...rest} ref={ref}>
         {children}

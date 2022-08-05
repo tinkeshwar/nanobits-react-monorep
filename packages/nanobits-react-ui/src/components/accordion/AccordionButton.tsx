@@ -14,7 +14,7 @@ export const AccordioButton = forwardRef<HTMLButtonElement, AccordioButtonProps>
   ({ children, className, ...rest }, ref) => {
     const { visible, setVisible } = useContext(AccordionItemContext)
 
-    const _className = classNames('accordion-button', { collapsed: !visible }, className)
+    const _className = classNames('accordion-button', 'n-custom-accordion-button-class', { collapsed: !visible }, className)
 
     return (
       <button

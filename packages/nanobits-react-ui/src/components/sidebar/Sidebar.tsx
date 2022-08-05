@@ -166,6 +166,7 @@ export const Sidebar = forwardRef<HTMLDivElement, SidebarProps>(
 
     const _className = classNames(
       'sidebar',
+      'n-custom-sidebar-class',
       {
         'sidebar-narrow': narrow,
         'sidebar-overlaid': overlaid,

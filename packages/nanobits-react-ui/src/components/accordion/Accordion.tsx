@@ -32,7 +32,7 @@ export const AccordionContext = createContext({} as AccordionContextProps)
 export const Accordion = forwardRef<HTMLDivElement, AccordionProps>(
   ({ children, activeItemKey = undefined, alwaysOpen = false, className, flush, ...rest }, ref) => {
     const [_activeItemKey, setActiveKey] = useState(activeItemKey)
-    const _className = classNames('accordion', { 'accordion-flush': flush }, className)
+    const _className = classNames('accordion', { 'accordion-flush': flush }, 'n-custom-accordion-context-class', className)
     return (
       <div className={_className} {...rest} ref={ref}>
         <AccordionContext.Provider value={{ _activeItemKey, alwaysOpen, setActiveKey }}>

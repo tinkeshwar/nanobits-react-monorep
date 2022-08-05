@@ -15,7 +15,7 @@ export interface OffcanvasTitleProps extends HTMLAttributes<HTMLHeadingElement> 
 
 export const OffcanvasTitle = forwardRef<HTMLHeadingElement, OffcanvasTitleProps>(
   ({ children, component: Component = 'h5', className, ...rest }, ref) => {
-    const _className = classNames('offcanvas-title', className)
+    const _className = classNames('offcanvas-title','n-custom-offcanvas-title-class', className)
 
     return (
       <Component className={_className} {...rest} ref={ref}>

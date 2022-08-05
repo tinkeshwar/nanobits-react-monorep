@@ -20,7 +20,7 @@ export const Backdrop = forwardRef<HTMLDivElement, BackdropProps>(
     const backdropRef = useRef<HTMLDivElement>(null)
     const forkedRef = useForkedRef(ref, backdropRef)
 
-    const _className = classNames(className, 'fade')
+    const _className = classNames(className, 'n-custom-backdrop-class', 'fade')
 
     const getTransitionClass = (state: string) => {
       return state === 'entered' && 'show'

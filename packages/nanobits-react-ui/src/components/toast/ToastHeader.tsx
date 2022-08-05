@@ -16,7 +16,7 @@ export interface ToastHeaderProps extends Omit<HTMLAttributes<HTMLDivElement>, '
 
 export const ToastHeader = forwardRef<HTMLDivElement, ToastHeaderProps>(
   ({ children, className, closeButton, ...rest }, ref) => {
-    const _className = classNames('toast-header', className)
+    const _className = classNames('toast-header','n-custom-toast-header-class', className)
     return (
       <div className={_className} {...rest} ref={ref}>
         {children}

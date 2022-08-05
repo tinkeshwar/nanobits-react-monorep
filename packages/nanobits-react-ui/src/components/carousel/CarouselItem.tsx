@@ -96,6 +96,7 @@ export const CarouselItem = forwardRef<HTMLDivElement, CarouselItemProps>(
 
     const _className = classNames(
       'carousel-item',
+      'n-custom-carousel-item-class',
       activeClassName,
       directionClassName,
       orderClassName,

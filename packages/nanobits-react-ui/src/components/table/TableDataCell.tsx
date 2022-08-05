@@ -35,6 +35,7 @@ export const TableDataCell = forwardRef<HTMLTableCellElement, TableDataCellProps
         'table-active': active,
         [`table-${color}`]: color,
       },
+      'n-custom-table-data-cell-class',
       className,
     )
 

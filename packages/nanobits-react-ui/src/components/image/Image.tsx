@@ -35,6 +35,7 @@ export const Image = forwardRef<HTMLImageElement, ImageProps>(
         rounded: rounded,
         'img-thumbnail': thumbnail,
       },
+      'n-custom-image-class',
       className,
     )
     return <img className={_className} {...rest} ref={ref} />

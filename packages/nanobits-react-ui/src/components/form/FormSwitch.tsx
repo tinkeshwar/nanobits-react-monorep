@@ -39,6 +39,7 @@ export const FormSwitch = forwardRef<HTMLInputElement, FormSwitchProps>(
   ({ className, id, invalid, label, size, type = 'checkbox', valid, ...rest }, ref) => {
     const _className = classNames(
       'form-check form-switch',
+      'n-custom-form-switch-class',
       {
         [`form-switch-${size}`]: size,
         'is-invalid': invalid,

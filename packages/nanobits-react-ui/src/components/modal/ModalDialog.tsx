@@ -29,6 +29,7 @@ export const ModalDialog = forwardRef<HTMLDivElement, ModalDialogProps>(
   ({ children, alignment, className, fullscreen, scrollable, size, ...rest }, ref) => {
     const _className = classNames(
       'modal-dialog',
+      'n-custom-modal-dialog-class',
       {
         'modal-dialog-centered': alignment === 'center',
         [typeof fullscreen === 'boolean'

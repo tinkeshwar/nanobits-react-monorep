@@ -85,6 +85,7 @@ export const Placeholder = forwardRef<HTMLSpanElement, PlaceholderProps>(
     })
 
     const _className = classNames(
+      'n-custom-placeholder-class',
       animation ? `placeholder-${animation}` : 'placeholder',
       {
         [`bg-${color}`]: color,

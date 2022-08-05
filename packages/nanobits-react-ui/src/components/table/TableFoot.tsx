@@ -23,6 +23,7 @@ export const TableFoot = forwardRef<HTMLTableSectionElement, TableFootProps>(
       {
         [`table-${color}`]: color,
       },
+      'n-custom-table-foot-class',
       className,
     )
 

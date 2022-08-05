@@ -47,6 +47,7 @@ export const DropdownToggle: FC<DropdownToggleProps> = ({
       'dropdown-toggle-split': split,
       'nav-link': variant === 'nav-item',
     },
+    'n-custom-dropdown-toggle-class',
     className,
   )
 

@@ -13,7 +13,7 @@ export interface AlertLinkProps extends AnchorHTMLAttributes<HTMLAnchorElement> 
 
 export const AlertLink = forwardRef<HTMLAnchorElement, AlertLinkProps>(
   ({ children, className, ...rest }, ref) => {
-    const _className = classNames('alert-link', className)
+    const _className = classNames('alert-link', 'n-custom-alert-link-class', className)
 
     return (
       <Link className={_className} {...rest} ref={ref}>

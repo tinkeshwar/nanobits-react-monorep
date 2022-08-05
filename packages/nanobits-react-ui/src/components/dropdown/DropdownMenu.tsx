@@ -119,6 +119,7 @@ export const DropdownMenu: FC<DropdownMenuProps> = ({
 
   const _className = classNames(
     'dropdown-menu',
+    'n-custom-dropdown-menu-class',
     {
       'dropdown-menu-dark': dark,
       show: visible,

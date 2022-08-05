@@ -11,7 +11,7 @@ export interface SidebarBrandProps extends HTMLAttributes<HTMLDivElement> {
 
 export const SidebarBrand = forwardRef<HTMLDivElement, SidebarBrandProps>(
   ({ children, className, ...rest }, ref) => {
-    const _className = classNames('sidebar-brand', className)
+    const _className = classNames('sidebar-brand','n-custom-sidebar-brand-class', className)
     return (
       <div className={_className} ref={ref} {...rest}>
         {children}
