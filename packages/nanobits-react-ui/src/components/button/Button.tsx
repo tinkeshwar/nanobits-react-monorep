@@ -51,9 +51,9 @@ export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
    */
   type?: 'button' | 'submit' | 'reset'
   /**
-   * Set the button variant to an outlined button or a ghost button.
+   * Set the button variant to an outlined button or a customized button.
    */
-  variant?: 'outline' | 'ghost'
+  variant?: 'normal' | 'outline' | 'customized'
 }
 
 export const Button = forwardRef<HTMLButtonElement | HTMLAnchorElement, ButtonProps>(
@@ -66,14 +66,14 @@ export const Button = forwardRef<HTMLButtonElement | HTMLAnchorElement, ButtonPr
       shape,
       size,
       type = 'button',
-      variant,
+      variant = 'normal',
       ...rest
     },
     ref,
   ) => {
     const _className = classNames(
       'btn', 'n-custom-button-class',
-      variant ? `btn-${variant}-${color}` : `btn-${color}`,
+      variant !== 'normal' ? `btn-${variant}-${color}` : `btn-${color}`,
       { [`btn-${size}`]: size },
       shape,
       className,
@@ -101,7 +101,7 @@ Button.propTypes = {
   shape: PropTypes.string,
   size: PropTypes.oneOf(['sm', 'lg']),
   type: PropTypes.oneOf(['button', 'submit', 'reset']),
-  variant: PropTypes.oneOf(['outline', 'ghost']),
+  variant: PropTypes.oneOf(['normal', 'outline', 'customized']),
 }
 
 Button.displayName = 'Button'

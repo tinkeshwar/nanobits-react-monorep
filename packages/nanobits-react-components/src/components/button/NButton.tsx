@@ -9,7 +9,7 @@ export interface NButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     className?: string
     loading?: boolean | undefined
     disabled?: boolean | undefined
-    buttonVariant?: 'ghost' | 'outline'
+    buttonVariant?: 'outline' | 'customized' | 'normal'
     buttonText?: string | undefined
     buttonIconLeft?: string | undefined
     buttonIconRight?: string | undefined
@@ -20,7 +20,7 @@ export const NButton = forwardRef<HTMLButtonElement | HTMLAnchorElement, ButtonP
         className,
         loading,
         disabled,
-        buttonVariant = 'ghost',
+        buttonVariant = 'normal',
         buttonText,
         buttonIconLeft,
         buttonIconRight,
@@ -52,7 +52,7 @@ NButton.propTypes = {
     className: PropTypes.string,
     loading: PropTypes.bool,
     disabled: PropTypes.bool,
-    buttonVariant: PropTypes.oneOf(['ghost', 'outline']),
+    buttonVariant: PropTypes.oneOf(['outline', 'customized', 'normal']),
     buttonText: PropTypes.string,
     buttonIconLeft: PropTypes.string,
     buttonIconRight: PropTypes.string
