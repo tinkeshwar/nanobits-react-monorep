@@ -9,8 +9,8 @@ import { FormSelect } from './FormSelect'
 import { FormSwitch } from './FormSwitch'
 import { FormText } from './FormText'
 import { FormTextarea } from './FormTextarea'
-import { CInputGroup } from './InputGroup'
-import { CInputGroupText } from './InputGroupText'
+import { InputGroup } from './InputGroup'
+import { InputGroupText } from './InputGroupText'
 
 export {
   Form,
@@ -24,6 +24,6 @@ export {
   FormSwitch,
   FormText,
   FormTextarea,
-  CInputGroup,
-  CInputGroupText,
+  InputGroup,
+  InputGroupText,
 }
