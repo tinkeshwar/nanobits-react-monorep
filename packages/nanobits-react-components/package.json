@@ -1,6 +1,6 @@
 {
   "name": "nanobits-react-components",
-  "version": "1.0.3",
+  "version": "1.0.11",
   "description": "Custome components using nanobits react ui",
   "author": "Tinkeshwar <tinkeshwar@gmail.com>",
   "homepage": "https://github.com/tinkeshwar/nanobits-react-monorep#readme",
@@ -43,7 +43,7 @@
   },
   "dependencies": {
     "nanobits-react-icons": "^1.0.1",
-    "nanobits-react-ui": "^1.0.0"
+    "nanobits-react-ui": "^1.0.10"
   },
   "peerDependencies": {
     "react": "^18.2.0",
