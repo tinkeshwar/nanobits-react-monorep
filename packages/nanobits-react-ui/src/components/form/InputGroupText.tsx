@@ -2,7 +2,7 @@ import React, { ElementType, forwardRef, HTMLAttributes } from 'react'
 import PropTypes from 'prop-types'
 import classNames from 'classnames'
 
-export interface CInputGroupTextProps extends HTMLAttributes<HTMLLabelElement | HTMLSpanElement> {
+export interface InputGroupTextProps extends HTMLAttributes<HTMLLabelElement | HTMLSpanElement> {
   /**
    * A string of all className you want applied to the component.
    */
@@ -13,7 +13,7 @@ export interface CInputGroupTextProps extends HTMLAttributes<HTMLLabelElement | 
   component?: string | ElementType
 }
 
-export const CInputGroupText = forwardRef<HTMLLabelElement | HTMLSpanElement, CInputGroupTextProps>(
+export const InputGroupText = forwardRef<HTMLLabelElement | HTMLSpanElement, InputGroupTextProps>(
   ({ children, className, component: Component = 'span', ...rest }, ref) => {
     const _className = classNames('input-group-text','n-custom-form-input-group-text-class', className)
     return (
@@ -24,10 +24,10 @@ export const CInputGroupText = forwardRef<HTMLLabelElement | HTMLSpanElement, CI
   },
 )
 
-CInputGroupText.propTypes = {
+InputGroupText.propTypes = {
   children: PropTypes.node,
   className: PropTypes.string,
   component: PropTypes.elementType,
 }
 
-CInputGroupText.displayName = 'CInputGroupText'
+InputGroupText.displayName = 'InputGroupText'
