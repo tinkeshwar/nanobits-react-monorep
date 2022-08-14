@@ -1,8 +1,8 @@
 import React, { forwardRef, InputHTMLAttributes, useEffect, useState } from 'react';
-import { FormFeedback, FormInput, FormLabel, InputGroup, InputGroupText } from 'nanobits-react-ui';
+import { FormFeedback, FormInput, InputGroup } from 'nanobits-react-ui';
 import classNames from 'classnames';
-import Icon from 'nanobits-react-icons';
 import { FormInputProps } from 'nanobits-react-ui/components/form/FormInput';
+import { Label, Prefix, Suffix } from '../label';
 
 export interface TextInputProps extends InputHTMLAttributes<HTMLInputElement>{
     className?: string,
@@ -46,12 +46,6 @@ export const TextInput = forwardRef<HTMLInputElement, TextInputProps & FormInput
     ref
 )=> {
 
-    const _lableclass = classNames(
-        'font-weight-bolder',
-        required  ? 'label-required' : '',
-        'n-custom-text-input-label-class'
-    )
-
     const _className = classNames(
         'n-custom-text-input-class',
         className
@@ -67,7 +61,7 @@ export const TextInput = forwardRef<HTMLInputElement, TextInputProps & FormInput
     }
 
     const handleBlur = (event:  React.FocusEvent<HTMLInputElement>) => {
-        setErrorMessage('')
+        setErrorMessage(undefined)
         if(onValidation){
             const validatorResponse = onValidation(event.target.value)
             if(validatorResponse && validatorResponse.error) setErrorMessage(validatorResponse.message)
@@ -76,17 +70,14 @@ export const TextInput = forwardRef<HTMLInputElement, TextInputProps & FormInput
     }
 
     useEffect(() => {
-        error ? setErrorMessage(error) : setErrorMessage('')
+        error ? setErrorMessage(error) : setErrorMessage(undefined)
     },[error])
 
     return (
         <React.Fragment>
-            {label && <FormLabel htmlFor={`for-${name}`} className={_lableclass}>{label}</FormLabel>}
+            {label && <Label labelfor={name} required={required} label={label}/>}
             <InputGroup>
-                {(iconLeft || textLeft ) && <InputGroupText className={_lableclass}>
-                    {iconLeft && <Icon type={'solid'} icon={iconLeft}/>}
-                    {textLeft || ''}
-                </InputGroupText>}
+                {(iconLeft || textLeft ) && <Prefix icon={iconLeft} text={textLeft} required={required}/>}
                 <FormInput
                     className={_className}
                     ref={ref}
@@ -102,10 +93,7 @@ export const TextInput = forwardRef<HTMLInputElement, TextInputProps & FormInput
                     {...rest}
                 />
                 {errorMessage && <FormFeedback>{errorMessage}</FormFeedback>}
-                {(iconRight || textRight ) && <InputGroupText className={_lableclass}>
-                    {iconRight && <Icon type={'solid'} icon={iconRight}/>}
-                    {textRight || ''}
-                </InputGroupText>}
+                {(iconRight || textRight ) && <Suffix icon={iconRight} text={textRight} required={required}/>}
             </InputGroup>
         </React.Fragment>
     )
