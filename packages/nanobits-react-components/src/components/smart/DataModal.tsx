@@ -15,6 +15,7 @@ export interface DataModalProps extends ModalProps{
     color?: 'primary' | 'danger' | 'info' | 'success' | 'warning' | 'dark'
     icon?: string
     buttons?: any
+    backdrop?: 'static' | boolean
     setVisible: (value: boolean) => void
 }
 
@@ -28,6 +29,7 @@ export const DataModal = forwardRef<HTMLDivElement, DataModalProps>((
         color,
         icon,
         buttons,
+        backdrop,
         setVisible,
         ...rest
     },
@@ -75,7 +77,8 @@ DataModal.prototype = {
     setVisible: PropTypes.func.isRequired,
     color: PropTypes.string,
     icon: PropTypes.string,
-    buttons: PropTypes.any
+    buttons: PropTypes.any,
+    backdrop: PropTypes.any
 }
 
 DataModal.displayName = 'DataModal'
