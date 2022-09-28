@@ -2,7 +2,7 @@ import React, { forwardRef } from 'react'
 import PropTypes from 'prop-types'
 import classNames from 'classnames'
 import { Pagination, PaginationItem } from 'nanobits-react-ui'
-import { PaginationProps } from 'nanobits-react-ui/dist/components/pagination/Pagination'
+import { PaginationProps } from 'nanobits-react-ui/components/pagination/Pagination'
 
 export interface MetaInterfaceProps {
     total: number,
@@ -87,7 +87,7 @@ export const DataPaginate = forwardRef<HTMLUListElement, DataPaginateProps>((
       { beforeDots && <PaginationItem>{'..'}</PaginationItem>}
       { items.map(i => <PaginationItem onClick={()=>onPageChange(i)} key={`pagination-${i}`} active={meta.page === i}>{i}</PaginationItem>)}
       { afterDots && <PaginationItem>{'..'}</PaginationItem>}
-      {(nextLabel && meta.pages > meta.page) && <PaginationItem onClick={()=>onPageChange(meta.page)} aria-label="Go to next page">{nextLabel}</PaginationItem>}
+      {(nextLabel && meta.pages > meta.page) && <PaginationItem onClick={()=>onPageChange(meta.page+1)} aria-label="Go to next page">{nextLabel}</PaginationItem>}
       {(lastLabel && meta.pages > meta.page) && <PaginationItem onClick={()=>onPageChange(meta.pages)} aria-label="Go to last page">{lastLabel}</PaginationItem>}
     </Pagination>
   )

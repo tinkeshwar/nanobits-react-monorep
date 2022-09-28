@@ -42,7 +42,7 @@ export const NButton = forwardRef<HTMLButtonElement | HTMLAnchorElement, ButtonP
             ref={ref}>
                 {loading && <Spinner color={'danger'} size={'sm'}/>}
                 {buttonIconLeft && <Icon type={'solid'} icon={buttonIconLeft} className={'mr-1'}/>} 
-                &nbsp;{buttonText || ''}&nbsp; 
+                {buttonText? ` ${buttonText} `:''} 
                 {buttonIconRight && <Icon type={'solid'} icon={buttonIconRight} className={'ml-1'}/>}
         </Button>
     )
