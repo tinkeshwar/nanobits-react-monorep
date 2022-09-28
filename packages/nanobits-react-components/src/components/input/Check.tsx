@@ -56,7 +56,7 @@ export const CheckInput = forwardRef<HTMLInputElement, CheckProps>((
     }
 
     const handleClick = (event: React.MouseEvent<HTMLInputElement>) => {
-        if (parseInt(event.currentTarget.value)) {
+        if (event.currentTarget.value) {
             if (onBoxClick) return onBoxClick(event.currentTarget.value)
         }
     }
@@ -77,6 +77,7 @@ export const CheckInput = forwardRef<HTMLInputElement, CheckProps>((
                         key={`for-${name}-${index}`}
                         className={_className} ref={ref}
                         inline={inline}
+                        name={name}
                         id={`for-${name}-${index}`}
                         value={item.value}
                         label={item.label}
