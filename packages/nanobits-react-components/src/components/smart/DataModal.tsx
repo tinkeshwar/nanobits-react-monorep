@@ -61,7 +61,17 @@ export const DataModal = forwardRef<HTMLDivElement, DataModalProps>((
             {children && <ModalBody>{children}</ModalBody>}
             {buttons && <ModalFooter>
                 {buttons.map((item: any, index: number) => {
-                    return <NButton size={item.size} key={`modal-footer-button-${index}`} color={item.color} buttonText={item.text} buttonIconLeft={item.icon} onClick={item.handler}/>
+                    return (
+                        <NButton
+                            type={item.type}
+                            form={item.form}
+                            size={item.size}
+                            key={`modal-footer-button-${index}`}
+                            color={item.color} buttonText={item.text}
+                            buttonIconLeft={item.icon}
+                            onClick={item.handler}
+                        />
+                    )
                 })}
             </ModalFooter>}
         </Modal>

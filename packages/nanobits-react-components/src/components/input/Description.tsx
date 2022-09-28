@@ -1,10 +1,10 @@
 import React, { forwardRef, InputHTMLAttributes, useEffect, useState } from 'react';
-import { FormFeedback, FormInput, InputGroup } from 'nanobits-react-ui';
+import { FormFeedback, FormTextarea, InputGroup } from 'nanobits-react-ui';
 import classNames from 'classnames';
 import { FormInputProps } from 'nanobits-react-ui/components/form/FormInput';
 import { Label, Prefix, Suffix } from '../label';
 
-export interface TextInputProps extends InputHTMLAttributes<HTMLInputElement>{
+export interface DescriptionInputProps extends InputHTMLAttributes<HTMLTextAreaElement>{
     className?: string,
     label?: string
     type?: 'text' | 'email' | 'password' | 'color'
@@ -18,13 +18,13 @@ export interface TextInputProps extends InputHTMLAttributes<HTMLInputElement>{
     name: string
     error?: string
     requiredText?: string
+    rows?: number
     onUpdate?: (value:any) => any
-    onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void
-    onBlur?: (value: any) => void
+    onChange?: (e: React.ChangeEvent<HTMLTextAreaElement>) => void
     onValidation?: (value: any) => any
 }
 
-export const TextInput = forwardRef<HTMLInputElement, TextInputProps & FormInputProps>((
+export const DescriptionInput = forwardRef<HTMLTextAreaElement, DescriptionInputProps & FormInputProps>((
     {
         className,
         label,
@@ -39,9 +39,9 @@ export const TextInput = forwardRef<HTMLInputElement, TextInputProps & FormInput
         name,
         error,
         requiredText,
+        rows = 3,
         onUpdate,
         onChange,
-        onBlur,
         onValidation,
         ...rest
     },
@@ -55,20 +55,11 @@ export const TextInput = forwardRef<HTMLInputElement, TextInputProps & FormInput
 
     const [errorMessage, setErrorMessage] = useState<string|undefined>(error)
 
-    const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const handleChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
         if (onUpdate) return onUpdate(event.target.value)
         if (onChange) return onChange(event)
 
         throw new Error('Provide onUpdate or onChange to input component.')
-    }
-
-    const handleBlur = (event:  React.FocusEvent<HTMLInputElement>) => {
-        setErrorMessage(undefined)
-        if(onValidation){
-            const validatorResponse = onValidation(event.target.value)
-            if(validatorResponse && validatorResponse.error) setErrorMessage(validatorResponse.message)
-        }
-        if(onBlur) return onBlur(event.target.value)
     }
 
     useEffect(() => {
@@ -80,18 +71,16 @@ export const TextInput = forwardRef<HTMLInputElement, TextInputProps & FormInput
             {label && <Label labelfor={name} required={required} label={label}/>}
             <InputGroup>
                 {(iconLeft || textLeft ) && <Prefix icon={iconLeft} text={textLeft} required={required}/>}
-                <FormInput
+                <FormTextarea
                     className={_className}
                     ref={ref}
                     id={`for-${name}`}
-                    type={type}
                     value={value}
                     name={name}
                     placeholder={placeholder}
                     aria-describedby={name}
                     invalid={errorMessage ? true : false}
                     onChange={handleChange}
-                    onBlur={handleBlur}
                     required={required}
                     feedbackInvalid={requiredText}
                     {...rest}
