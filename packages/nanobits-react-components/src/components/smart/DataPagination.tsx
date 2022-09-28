@@ -72,11 +72,11 @@ export const DataPaginate = forwardRef<HTMLUListElement, DataPaginateProps>((
     if (meta.page - maxPrevItems <= 1) {
       return Array.from({
         length: itemsAmount
-      }, (v, i) => i + 1).filter((i) => !isNaN(i))
+      }, (_v, i) => i + 1).filter((i) => !isNaN(i))
     } else {
       return Array.from({
         length: itemsAmount
-      }, (v, i) => lastItem - i ).filter((i) => !isNaN(i)).reverse()
+      }, (_v, i) => lastItem - i ).filter((i) => !isNaN(i)).reverse()
     }
   })()
 
