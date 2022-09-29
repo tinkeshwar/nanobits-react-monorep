@@ -12,7 +12,7 @@ type Option = {
 }
 export interface FormSelectProps
   extends FormControlWrapperProps,
-    Omit<InputHTMLAttributes<HTMLSelectElement>, 'size'> {
+  Omit<InputHTMLAttributes<HTMLSelectElement>, 'size'> {
   /**
    * A string of all className you want applied to the component.
    */
@@ -41,7 +41,8 @@ export interface FormSelectProps
    *
    * @controllable onChange
    */
-  value?: string | string[] | number
+  value?: string | string[] | number,
+  placeholder?: string
 }
 
 export const FormSelect = forwardRef<HTMLSelectElement, FormSelectProps>(
@@ -62,6 +63,7 @@ export const FormSelect = forwardRef<HTMLSelectElement, FormSelectProps>(
       text,
       tooltipFeedback,
       valid,
+      placeholder,
       ...rest
     },
     ref,
@@ -92,7 +94,9 @@ export const FormSelect = forwardRef<HTMLSelectElement, FormSelectProps>(
       >
         <select id={id} className={_className} size={htmlSize} {...rest} ref={ref}>
           {options
-            ? options.map((option, index) => {
+            ? <>
+            <option hidden value={''}>{placeholder}</option>
+              {options.map((option, index) => {
                 return (
                   <option
                     {...(typeof option === 'object' &&
@@ -103,7 +107,8 @@ export const FormSelect = forwardRef<HTMLSelectElement, FormSelectProps>(
                     {typeof option === 'string' ? option : option.label}
                   </option>
                 )
-              })
+              })}
+            </>
             : children}
         </select>
       </FormControlWrapper>
