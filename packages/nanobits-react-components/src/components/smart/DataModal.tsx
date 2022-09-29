@@ -53,6 +53,7 @@ export const DataModal = forwardRef<HTMLDivElement, DataModalProps>((
             className={_className}
             visible={visible}
             onClose={() => setVisible(!visible)}
+            backdrop={backdrop}
             {...rest}
         >
             <ModalHeader className={_headerClassName}>
@@ -67,9 +68,14 @@ export const DataModal = forwardRef<HTMLDivElement, DataModalProps>((
                             form={item.form}
                             size={item.size}
                             key={`modal-footer-button-${index}`}
-                            color={item.color} buttonText={item.text}
-                            buttonIconLeft={item.icon}
+                            color={item.color}
+                            buttonText={item.text}
+                            buttonIconLeft={item.iconLeft}
+                            buttonIconRight={item.iconRight}
+                            buttonVariant={item.variant}
                             onClick={item.handler}
+                            loading={item.loading}
+                            disabled={item.disabled}
                         />
                     )
                 })}
