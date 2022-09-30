@@ -42,6 +42,9 @@ export interface FormSelectProps
    * @controllable onChange
    */
   value?: string | string[] | number,
+  /**
+   * Placeholder of component
+   */
   placeholder?: string
 }
 
