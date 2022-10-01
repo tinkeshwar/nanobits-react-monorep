@@ -37,6 +37,7 @@ export const WButton = forwardRef<HTMLDivElement, WButtonProps>((
 )=>{
 
     const _className = classNames(
+        'n-custom-widgit-button-class',
         'cursor-pointer',
         color ? `border-${color}`:'',
         className
