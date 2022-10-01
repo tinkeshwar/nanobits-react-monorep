@@ -4,9 +4,7 @@
     "packages/*"
   ],
   "scripts": {
-    "build": "lerna run build --stream",
-    "version": "lerna version",
-    "publish": "lerna publish from-git"
+    "build": "lerna run build --stream"
   },
   "devDependencies": {
     "lerna": "^5.3.0",
