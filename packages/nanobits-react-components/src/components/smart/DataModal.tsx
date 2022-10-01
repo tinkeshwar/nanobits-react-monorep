@@ -19,7 +19,7 @@ export interface DataModalProps extends ModalProps{
     setVisible: (value: boolean) => void
 }
 
-export const DataModal = forwardRef<HTMLDivElement, DataModalProps>((
+export const DataModal = forwardRef<HTMLDivElement, DataModalProps&ModalProps>((
     {
         title,
         children,
