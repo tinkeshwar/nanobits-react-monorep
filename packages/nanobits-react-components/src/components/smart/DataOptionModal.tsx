@@ -58,6 +58,7 @@ export const DataOptionModal = forwardRef<HTMLDivElement, DataOptionModalProps&M
                             return (
                                 <Col key={`option-modal-col-${index}`} className={index > 0 ? 'pl-0' : ''}>
                                     <WButton
+                                        className={'shadow'}
                                         primary={primary}
                                         title={colItem.title}
                                         color={colItem.color}
