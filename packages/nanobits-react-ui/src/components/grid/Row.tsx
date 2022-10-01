@@ -90,7 +90,7 @@ export const Row = forwardRef<HTMLDivElement, RowProps>(
     const _className = classNames(
       'row',
       repsonsiveClassNames,
-      'n-custom-col-class',
+      'n-custom-row-class',
       className
     )
 
