@@ -42,8 +42,8 @@
     "typescript": "^4.7.4"
   },
   "peerDependencies": {
-    "nanobits-react-icons": "^1.0.17",
-    "nanobits-react-ui": "^1.0.27",
+    "nanobits-react-icons": "^1.1.1",
+    "nanobits-react-ui": "^1.1.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   }

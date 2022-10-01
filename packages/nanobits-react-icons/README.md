@@ -7,6 +7,6 @@
 ```
 import Icon from 'nanobits-react-icons'
 
-<Icon icon={'fa-trash'} />
+<Icon icon={'fa-trash'} type={'solid'}/>
 
 ```

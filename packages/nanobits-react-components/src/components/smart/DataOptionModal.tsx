@@ -16,7 +16,7 @@ export interface DataOptionModalProps extends ModalProps{
     options: any
 }
 
-export const DataOptionModal = forwardRef<HTMLDivElement, DataOptionModalProps>((
+export const DataOptionModal = forwardRef<HTMLDivElement, DataOptionModalProps&ModalProps>((
     {
         visible,
         className,
