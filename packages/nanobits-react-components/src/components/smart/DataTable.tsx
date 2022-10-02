@@ -85,7 +85,7 @@ export const DataTable = forwardRef<HTMLTableElement, DataTableProps>((
             return (
               <TableRow key={`data-${index}`}>
                 {checking && <TableDataCell><FormCheck/></TableDataCell>}
-                {indexing && <TableDataCell>{index+1}</TableDataCell>}
+                {indexing && <TableDataCell>{(index+1)+((meta.page-1)*meta.per_page)}</TableDataCell>}
                 {columns && Object.entries(columns).map(([column]) => {
                   return <TableDataCell onDoubleClick={()=>handleDoubleClick(item)} key={`data-${index}-${column}`}>{item[column]}</TableDataCell>
                 })}

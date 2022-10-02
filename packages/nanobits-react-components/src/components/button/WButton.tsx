@@ -15,6 +15,7 @@ export interface WButtonProps {
     titleClass?: string,
     valueClass?: string,
     iconClass?: string,
+    disabled?: boolean, 
     onClick?: (value: string|number) => void
 }
 
@@ -30,6 +31,7 @@ export const WButton = forwardRef<HTMLDivElement, WButtonProps>((
         titleClass,
         valueClass,
         iconClass,
+        disabled,
         onClick,
         ...rest
     },
@@ -40,6 +42,7 @@ export const WButton = forwardRef<HTMLDivElement, WButtonProps>((
         'n-custom-widgit-button-class',
         'cursor-pointer',
         color ? `border-bottom-${color}`:'',
+        disabled ? 'disabled':'',
         className
     )
 
@@ -71,7 +74,7 @@ export const WButton = forwardRef<HTMLDivElement, WButtonProps>((
     }
 
     return (
-        <Card className={_className} {...rest} ref={ref} onClick={clickHandle}>
+        <Card className={_className} {...rest} ref={ref} onClick={disabled? ()=>{}: clickHandle}>
             <CardBody className={'text-center'}>
             {title && ( <Div className={_title}>{title}</Div> )}
             {value && <Div className={_value}>{value}</Div>}

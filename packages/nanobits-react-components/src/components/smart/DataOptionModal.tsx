@@ -65,6 +65,7 @@ export const DataOptionModal = forwardRef<HTMLDivElement, DataOptionModalProps&M
                                         icon={colItem.icon}
                                         value={colItem.value}
                                         onClick={colItem.onClick}
+                                        disabled={colItem.disabled}
                                     />
                                 </Col>
                             )
