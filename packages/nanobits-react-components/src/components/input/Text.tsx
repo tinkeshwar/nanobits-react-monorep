@@ -1,4 +1,4 @@
-import React, { forwardRef, InputHTMLAttributes, useEffect, useState } from 'react';
+import React, { forwardRef, InputHTMLAttributes, useEffect, useRef, useState } from 'react';
 import { FormFeedback, FormInput, InputGroup } from 'nanobits-react-ui';
 import classNames from 'classnames';
 import { FormInputProps } from 'nanobits-react-ui/components/form/FormInput';
@@ -53,6 +53,10 @@ export const TextInput = forwardRef<HTMLInputElement, TextInputProps & FormInput
         className
     )
 
+    const _inputGroup = classNames(
+        required ? 'has-validation':''
+    )
+
     const [errorMessage, setErrorMessage] = useState<string|undefined>(error)
 
     const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -71,14 +75,18 @@ export const TextInput = forwardRef<HTMLInputElement, TextInputProps & FormInput
         if(onBlur) return onBlur(event.target.value)
     }
 
+    const errorExecuted = useRef(true)
     useEffect(() => {
-        error ? setErrorMessage(error) : setErrorMessage(undefined)
+        if(errorExecuted.current){
+            errorExecuted.current = false
+            error ? setErrorMessage(error) : setErrorMessage(undefined)
+        }
     },[error])
 
     return (
         <React.Fragment>
             {label && <Label labelfor={name} required={required} label={label}/>}
-            <InputGroup>
+            <InputGroup className={_inputGroup}>
                 {(iconLeft || textLeft ) && <Prefix icon={iconLeft} text={textLeft} required={required}/>}
                 <FormInput
                     className={_className}
