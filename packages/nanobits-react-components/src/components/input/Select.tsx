@@ -94,7 +94,7 @@ export const SelectInput = forwardRef<HTMLSelectElement, SelectInputProps & Form
                     feedbackInvalid={requiredText}
                     invalid={errorMessage ? true : false}
                     onChange={handleChange}
-                    options={options}
+                    options={[{ label: placeholder || 'Select here...', disabled: true }, ...options]}
                     {...rest}
                 />
                 {errorMessage && <FormFeedback>{errorMessage}</FormFeedback>}

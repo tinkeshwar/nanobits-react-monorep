@@ -1,10 +1,10 @@
-import React, { forwardRef, InputHTMLAttributes, useEffect, useState } from 'react';
-import { FormFeedback, FormTextarea, InputGroup } from 'nanobits-react-ui';
-import classNames from 'classnames';
+import classNames from "classnames";
+import { FormFeedback, FormInput, InputGroup } from "nanobits-react-ui";
+import React, { forwardRef, InputHTMLAttributes, useEffect, useRef, useState } from "react";
+import { Label, Prefix, Suffix } from "../label";
 import { FormInputProps } from 'nanobits-react-ui/components/form/FormInput';
-import { Label, Prefix, Suffix } from '../label';
 
-export interface DescriptionInputProps extends InputHTMLAttributes<HTMLTextAreaElement> {
+export interface AutoCompleteProps extends InputHTMLAttributes<HTMLInputElement> {
     className?: string,
     label?: string
     type?: 'text' | 'email' | 'password' | 'color'
@@ -18,14 +18,13 @@ export interface DescriptionInputProps extends InputHTMLAttributes<HTMLTextAreaE
     name: string
     error?: string
     requiredText?: string
-    rows?: number
-    floatingLabel?: string
     onUpdate?: (value: any) => any
-    onChange?: (e: React.ChangeEvent<HTMLTextAreaElement>) => void
+    onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void
+    onBlur?: (value: any) => void
     onValidation?: (value: any) => any
 }
 
-export const DescriptionInput = forwardRef<HTMLTextAreaElement, DescriptionInputProps & FormInputProps>((
+export const AutoComplete = forwardRef<HTMLInputElement, AutoCompleteProps & FormInputProps>((
     {
         className,
         label,
@@ -40,16 +39,14 @@ export const DescriptionInput = forwardRef<HTMLTextAreaElement, DescriptionInput
         name,
         error,
         requiredText,
-        rows = 3,
-        floatingLabel,
         onUpdate,
         onChange,
+        onBlur,
         onValidation,
         ...rest
     },
     ref
 ) => {
-
     const _className = classNames(
         'n-custom-text-input-class',
         className
@@ -59,18 +56,30 @@ export const DescriptionInput = forwardRef<HTMLTextAreaElement, DescriptionInput
         required ? 'has-validation' : ''
     )
 
-
     const [errorMessage, setErrorMessage] = useState<string | undefined>(error)
 
-    const handleChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
+    const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         if (onUpdate) return onUpdate(event.target.value)
         if (onChange) return onChange(event)
 
         throw new Error('Provide onUpdate or onChange to input component.')
     }
 
+    const handleBlur = (event: React.FocusEvent<HTMLInputElement>) => {
+        setErrorMessage(undefined)
+        if (onValidation) {
+            const validatorResponse = onValidation(event.target.value)
+            if (validatorResponse && validatorResponse.error) setErrorMessage(validatorResponse.message)
+        }
+        if (onBlur) return onBlur(event.target.value)
+    }
+
+    const errorExecuted = useRef(true)
     useEffect(() => {
-        error ? setErrorMessage(error) : setErrorMessage(undefined)
+        if (errorExecuted.current) {
+            errorExecuted.current = false
+            error ? setErrorMessage(error) : setErrorMessage(undefined)
+        }
     }, [error])
 
     return (
@@ -78,17 +87,18 @@ export const DescriptionInput = forwardRef<HTMLTextAreaElement, DescriptionInput
             {label && <Label labelfor={name} required={required} label={label} />}
             <InputGroup className={_inputGroup}>
                 {(iconLeft || textLeft) && <Prefix icon={iconLeft} text={textLeft} required={required} />}
-                <FormTextarea
-                    floatingLabel={floatingLabel}
+                <FormInput
                     className={_className}
                     ref={ref}
                     id={`for-${name}`}
+                    type={type}
                     value={value}
                     name={name}
                     placeholder={placeholder}
                     aria-describedby={name}
                     invalid={errorMessage ? true : false}
                     onChange={handleChange}
+                    onBlur={handleBlur}
                     required={required}
                     feedbackInvalid={requiredText}
                     {...rest}
@@ -99,4 +109,3 @@ export const DescriptionInput = forwardRef<HTMLTextAreaElement, DescriptionInput
         </React.Fragment>
     )
 })
-

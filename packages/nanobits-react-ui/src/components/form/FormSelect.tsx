@@ -12,7 +12,7 @@ type Option = {
 }
 export interface FormSelectProps
   extends FormControlWrapperProps,
-    Omit<InputHTMLAttributes<HTMLSelectElement>, 'size'> {
+  Omit<InputHTMLAttributes<HTMLSelectElement>, 'size'> {
   /**
    * A string of all className you want applied to the component.
    */
@@ -93,17 +93,16 @@ export const FormSelect = forwardRef<HTMLSelectElement, FormSelectProps>(
         <select id={id} className={_className} size={htmlSize} {...rest} ref={ref}>
           {options
             ? options.map((option, index) => {
-                return (
-                  <option
-                    {...(typeof option === 'object' &&
-                      option.disabled && { disabled: option.disabled })}
-                    {...(typeof option === 'object' && option.value && { value: option.value })}
-                    key={index}
-                  >
-                    {typeof option === 'string' ? option : option.label}
-                  </option>
-                )
-              })
+              return (
+                <option
+                  {...(typeof option === 'object' && option.disabled && { disabled: option.disabled })}
+                  {...(typeof option === 'object' && option.value && { value: option.value })}
+                  key={index}
+                >
+                  {typeof option === 'string' ? option : option.label}
+                </option>
+              )
+            })
             : children}
         </select>
       </FormControlWrapper>
