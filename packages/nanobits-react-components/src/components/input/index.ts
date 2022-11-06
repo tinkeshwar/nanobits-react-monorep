@@ -4,6 +4,7 @@ import { RadioInput } from './Radio'
 import { DescriptionInput } from './Description'
 import { SelectInput } from './Select'
 import { AutoComplete } from './AutoComplete'
+import { MutiSelectInput } from './MultiSelect'
 
 export {
     TextInput,
@@ -11,5 +12,6 @@ export {
     CheckInput,
     RadioInput,
     SelectInput,
-    AutoComplete
+    AutoComplete,
+    MutiSelectInput
 }

@@ -97,7 +97,7 @@ export const SelectInput = forwardRef<HTMLInputElement, SelectInputProps & FormS
         <React.Fragment>
             {label && <Label labelfor={name} required={required} label={label} />}
             <Dropdown variant={'dropdown'} className={'w-100'}>
-                <DropdownToggle color={'none'} className={'d-block w-100 p-0 border-0 text-left bg-white h6 mb-0 dropdown-toggler-select'}>
+                <DropdownToggle disabled={disabled} color={'none'} className={'d-block w-100 p-0 border-0 text-left bg-white h6 mb-0 dropdown-toggler-select'}>
                     <InputGroup>
                         {(iconLeft || textLeft) && <Prefix icon={iconLeft} text={textLeft} required={required} />}
                         <FormInput
@@ -122,7 +122,7 @@ export const SelectInput = forwardRef<HTMLInputElement, SelectInputProps & FormS
                         {(iconRight || textRight) && <Suffix icon={iconRight} text={textRight} required={required} />}
                     </InputGroup>
                 </DropdownToggle>
-                {(options && options?.length && !disabled) && <DropdownMenu className={'pt-0'}>
+                {(options && options?.length) && <DropdownMenu className={'pt-0'}>
                     {options?.filter(optionsSearchFilter).map((option: SelectOptionProps, index: number) => {
                         return (
                             <DropdownItem key={`select-option-${index}`} onClick={() => handleChange(option)} >{option.label}</DropdownItem>
