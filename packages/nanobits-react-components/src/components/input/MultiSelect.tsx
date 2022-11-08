@@ -2,7 +2,7 @@ import React, { forwardRef, InputHTMLAttributes, useEffect, useRef, useState } f
 import classNames from 'classnames'
 import { Label, Prefix, Suffix } from 'nanobits-react-components'
 import { Dropdown, DropdownToggle, FormFeedback, FormInput, InputGroup, DropdownMenu, DropdownItem, FormCheck } from 'nanobits-react-ui'
-import { FormSelectProps } from 'nanobits-react-ui/dist/components/form/FormSelect'
+import { FormSelectProps } from 'nanobits-react-ui/components/form/FormSelect'
 
 export interface OptionProps {
     label: string,
@@ -24,7 +24,8 @@ export interface MultiSelectProps extends InputHTMLAttributes<HTMLInputElement> 
     options: OptionProps[],
     disabled?: boolean,
     value: string[],
-    limit?: number
+    limit?: number,
+    selectAll?: boolean,
     onUpdate?: (value: string[]) => any
 }
 
@@ -46,6 +47,7 @@ export const MutiSelectInput = forwardRef<HTMLInputElement, MultiSelectProps & F
     value,
     onUpdate,
     limit,
+    selectAll,
     ...rest
   },
   ref
@@ -72,6 +74,23 @@ export const MutiSelectInput = forwardRef<HTMLInputElement, MultiSelectProps & F
     } else {
       const checked = [...value]
       const newArray = checked.filter(item => (item !== event.currentTarget.value))
+      if (onUpdate) return onUpdate(newArray)
+    }
+  }
+
+  const handleSelectAll = (event: React.ChangeEvent<HTMLInputElement>) => {
+    if (event.currentTarget.checked) {
+      const unselectedValues = options.filter((option) => !value.includes(option.value?.toString()))
+      unselectedValues.forEach((option) => {
+        value.push(option.value?.toString())
+        const newArray = [...value]
+        if (onUpdate) return onUpdate(newArray)
+      })
+    } else {
+      while (value.length > 0) {
+        value.pop()
+      }
+      const newArray = [...value]
       if (onUpdate) return onUpdate(newArray)
     }
   }
@@ -126,6 +145,16 @@ export const MutiSelectInput = forwardRef<HTMLInputElement, MultiSelectProps & F
           </InputGroup>
         </DropdownToggle>
         {(options && options?.length) && <DropdownMenu className={'pt-0'}>
+        {selectAll && <DropdownItem>
+            <FormCheck
+              form={name}
+              id={'for-select-all'}
+              label={'Select All'}
+              onChange={handleSelectAll}
+              checked={value.length === options.length}
+              disabled={disabled || limit !== undefined}
+            />
+          </DropdownItem>}
           {options?.filter(optionSearchFilter)?.map((option: OptionProps, index: number) => {
             return (
               <DropdownItem key={`select-option-${index}`} >
